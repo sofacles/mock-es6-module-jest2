@@ -1,10 +1,11 @@
 
 import React from "react";
 import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom'
 import Component from "./Component";
-import { getCatFact } from "./CatService";
 
-test("mockify", async () => {
+
+test("mock an es6 module", async () => {
     const mockCatFact = jest.fn();
 
     mockCatFact.mockImplementation(() => ({fact: "mocked"}));
@@ -17,7 +18,7 @@ test("mockify", async () => {
       }));
     
     
-    const element = render(
+    render(
         <Component />
     );
     
