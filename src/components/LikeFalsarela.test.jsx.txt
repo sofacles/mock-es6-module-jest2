@@ -1,18 +1,18 @@
-
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom'
-import * as useCatSvcHook from './CatService';
 import Component from "./Component";
+import { getCatFact } from "./CatService";
 
 
 test("mock an es6 module", async () => {
-    useCatSvcHook.getCatFact = jest.fn(() => ({fact: "mocked"}))
+   getCatFact.mockImplementation(() => ({fact: "mocked"}));
+    // get me "TypeError: _CatService.getCatFact.mockImplementation is not a function"
     
     render(
         <Component />
     );
     
     const myDiv = await screen.findByTestId("my-div")
-    expect(myDiv).toHaveTextContent("mocked");
+    expect(myDiv).toHaveTextContent("mocked");//Fails! value not mocked
 });
