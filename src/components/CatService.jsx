@@ -1,3 +1,3 @@
 export default "default"
 
-export const getCatFact = () => ({fact: "cats poop in a box"});
+export const getCatFact = () => ({fact: "cats are quadrupeds"});

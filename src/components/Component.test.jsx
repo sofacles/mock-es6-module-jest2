@@ -20,6 +20,7 @@ test("mockify", async () => {
     const element = render(
         <Component />
     );
+    
     const myDiv = await screen.findByTestId("my-div")
     expect(myDiv).toHaveTextContent("mocked");//Fails! value not mocked
 });
