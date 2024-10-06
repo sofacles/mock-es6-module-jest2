@@ -6,7 +6,7 @@ import Component from "./Component";
 import * as useCatSvcHook from './CatService';
 
 
-test("mock an es6 module", async () => {
+test("spyOn an es6 module", async () => {
     const mockHook = jest.spyOn(useCatSvcHook, 'getCatFact');
     mockHook.mockImplementation(() => ({ fact: "mocked" }));
 
@@ -15,5 +15,5 @@ test("mock an es6 module", async () => {
     );
 
     const myDiv = await screen.findByTestId("my-div")
-    expect(myDiv).toHaveTextContent("mocked");//Fails! value not mocked
+    expect(myDiv).toHaveTextContent("mocked"); // works! 
 });
