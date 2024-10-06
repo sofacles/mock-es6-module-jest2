@@ -2,9 +2,7 @@ import React, { useContext } from "react";
 import { getCatFact } from "./CatService";
 
 const Component = () => {
-  const blah = getCatFact(); 
-  console.info(blah);
-  const {fact} = blah;
+  const {fact} = getCatFact(); 
     return <div data-testid="my-div">{fact}</div>
 }
 
